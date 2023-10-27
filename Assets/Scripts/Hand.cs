@@ -13,7 +13,7 @@ namespace TriangleCardGame.Hands {
         private Card selectedCard;
         private float cardSpacing = 0.02f;
         private Vector3 cardRotation = -5f*Vector3.forward;
-        private Vector3 selectedCardTranslation = 0.1f*Vector3.forward;
+        private Vector3 selectedCardTranslation = 0.04f*Vector3.forward;
 
         void Awake() {
             handCenter = transform;
@@ -66,6 +66,10 @@ namespace TriangleCardGame.Hands {
 
         public void DeselectCard() {
             selectedCard = null;
+        }
+
+        public int GetSize() {
+            return cards.Count;
         }
 
         private void SortHand() {

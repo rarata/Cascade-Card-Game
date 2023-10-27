@@ -1,12 +1,13 @@
-## Triangle-Card-Game
-Unity implementation of the card game Triangle.
-This is a card game invented by Ryan Arata that can be played by 2-4 players.  Each player has a full deck of cards and fills out a triangle of cards starting with a pre-played top row.  The player that plays the most cards by the time the Triangle is complete wins!
+## Cascade-Card-Game
+Unity implementation of the card game Cascade.
+This is a card game invented by Ryan Arata that can be played by 2-4 players.  Each player has a full deck of cards and fills out a triangle of cards starting with a pre-played top row.  The player that plays the most cards by the time the triangle is complete wins!
 
 ## Features
 v0.0 (MVP)
 Player versus 1 bot
 Only one bot difficulty level
 Single game, no matches
+Ability to start a new game when done
 
 ## Rules
 Objective:
@@ -32,7 +33,7 @@ Play:
 - The player starts the turn with 1 action
 - Actions can be used to play a card or draw a card
 - A card can be played in the slot below two other cards if its value NOT between the two cards (Aces count as 1)
-- When a card is played, you get bonuses based on its relationship to the cards its played on top of:
+- When a card is played, the player gets bonuses based on its relationship to the cards its played on top of:
   - For each matching value, the player adds an additional action to their turn
   - For each matching suit, the player draws a card (does not count as an action)
   - If the three cards make three-in-a-row, the player gets 1 draw and 1 action (in addition to any suit-matching draws)

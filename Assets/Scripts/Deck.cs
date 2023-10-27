@@ -46,6 +46,14 @@ namespace TriangleCardGame.Decks {
             }
         }
 
+        public void MoveAllCardsToLayer(int layer) {
+            for (int i = 0; i < fullDeck.Count; i++) {
+                if (fullDeck[i].gameObject.layer != layer) {
+                    fullDeck[i].gameObject.layer = layer;
+                }
+            }
+        }
+
         public Card DrawCard() {
             return drawDeck.Pop();
         }

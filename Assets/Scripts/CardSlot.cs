@@ -64,6 +64,7 @@ namespace TriangleCardGame.CardSlots {
                 isAvailable = false;
                 card.transform.position = transform.position + offset;
                 card.transform.rotation = transform.rotation;
+                card.gameObject.layer = LayerMask.NameToLayer("PlaySurface");
                 newDraws += NumMatchingSuits(card);
                 newActions += NumMatchingNumbers(card);
                 if (IsThreeInARow(card)) {

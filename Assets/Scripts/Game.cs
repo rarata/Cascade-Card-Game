@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TriangleCardGame.Players;
 using TriangleCardGame.CardSlots;
 using TriangleCardGame.Cards;
 
 public class Game : MonoBehaviour
 {
+    public int numPlayers;
     public List<Player> players;
     public List<CardSlot> rootCardSlots;
     public List<CardSlot> mainCardSlots;
     public CardSlot finalCardSlot;
     public GameObject newGameButton;
+    public List<Text> playerNameText;
+    public List<Text> handSizeText;
+    public List<Text> actionsText;
+    public List<Text> scoreText;
+    public Text winnerText;
     private List<CardSlot> cardSlots;
     private int firstPlayerIndex = 0;
     private int currentPlayerIndex;
     private Player currentPlayer;
-    private int actions;
     private int slotToPlay; //TEMP
     private CardSlot selectedCardSlot;
     private float selectedCardSlotScaleFactor = 1.2f;
 
-    // TODO: extract methods and attributes that make sens to a "PlayField" class
+    // TODO: extract methods and attributes that make sense to a "PlayField" class
 
     // Start is called before the first frame update
     void Start() {
@@ -47,8 +53,27 @@ public class Game : MonoBehaviour
         // EndGame: check if game is over & display score
         if (!finalCardSlot.isEmpty) {
             newGameButton.SetActive(true);
-            // TODO: display score
+            winnerText.text = "Winner: " + GetWinnerName();
+            winnerText.enabled = true;
         }
+        // Update the score game status text (score, # of cards in hands)
+        UpdateStatusDisplay();
+    }
+
+    private string GetWinnerName() {
+        string winnerName = "";
+        int maxScore = 0;
+        for (int i = 0; i < players.Count; i++) {
+            int thisScore = players[i].GetScore();
+            if (thisScore > maxScore) {
+                winnerName = players[i].playerName;
+                maxScore = thisScore;
+            } 
+            else if (thisScore == maxScore) {
+                winnerName = "Tie";
+            }
+        }
+        return winnerName;
     }
 
     public void SetupNewGame() {
@@ -60,9 +85,6 @@ public class Game : MonoBehaviour
         } // TODO: move this together with setup further down
         currentPlayer = players[firstPlayerIndex]; // TODO: update first player selection
         currentPlayer.SetActions(1);
-        //TEMP
-        slotToPlay = 0;
-        //END TEMP
         // Remove all cards from the cardSlots
         for (int i = 0; i < cardSlots.Count; i++) {
             cardSlots[i].Clear();
@@ -81,17 +103,17 @@ public class Game : MonoBehaviour
         }
         // Hide the new game button
         newGameButton.SetActive(false);
+        winnerText.enabled = false;
     }
 
     public void PlaceCard() {
+        // Method to have the current player place a card from their hand onto a card slot
         Card cardToPlace = currentPlayer.GetSelectedCard();
         CardSlot targetSlot = selectedCardSlot;
         if (cardToPlace == null || targetSlot == null) {
             Debug.LogError("Card or Slot not selected"); // TODO: only show Place Card button when available
             return;
         }
-        
-        // Method to have the current player place a card from their hand onto a card slot
         // check if cardToPlace in hand
         if (!currentPlayer.hand.cards.Contains(cardToPlace)) {
             Debug.LogError("Requested to place card that is not in the current player's hand: {cardToPlace}");
@@ -106,7 +128,7 @@ public class Game : MonoBehaviour
             DeselectCardSlot();
             currentPlayer.DeselectCard();
             currentPlayer.RemoveCardFromHand(cardToPlace);
-            currentPlayer.cardsPlayedThisGame++;
+            currentPlayer.AddScore(1);
             currentPlayer.DrawCards(newDraws);
             currentPlayer.AddAction(newActions);
             currentPlayer.RemoveAction(1); // use action for successfully placed card
@@ -123,31 +145,25 @@ public class Game : MonoBehaviour
     }
 
     private void HandleClicks() {
-        GameObject clickedObject = GetClickedObject();
-        if (clickedObject != null) {
-            SelectCardSlotOnClick(clickedObject); // TODO: extract to playField.SelectCardSlot()
-            currentPlayer.SelectCardOnClick(clickedObject);
-        }
-    }
-
-    private GameObject GetClickedObject() {
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) {
-                return hit.collider.gameObject;
-            }
+            SelectCardSlotOnClick(ray); // TODO: extract to playField.SelectCardSlot()
+            currentPlayer.SelectCardOnClick(ray);
         }
-        return null;
     }
 
-    private void SelectCardSlotOnClick(GameObject clickedObject) { // TODO: extract to playField.SelectCardSlot()
-        CardSlot clickedCardSlot = clickedObject.GetComponent<CardSlot>();
-        if (clickedCardSlot != null) {
-            DeselectCardSlot();
-            SelectCardSlot(clickedCardSlot);
+    private void SelectCardSlotOnClick(Ray ray) { // TODO: extract to playField.SelectCardSlot()
+        RaycastHit hit;
+        int playSurfaceLayerNumber = gameObject.layer;
+        LayerMask playSurfaceLayerMask = 1 << playSurfaceLayerNumber;
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, playSurfaceLayerMask)) {
+            GameObject clickedObject = hit.collider.gameObject;
+            CardSlot clickedCardSlot = clickedObject.GetComponent<CardSlot>();
+            if (clickedCardSlot != null) {
+                DeselectCardSlot();
+                SelectCardSlot(clickedCardSlot);
+            }
         }
-        
     }
 
     private void DeselectCardSlot() {
@@ -161,6 +177,21 @@ public class Game : MonoBehaviour
         if (slotToSelect.isAvailable) {
             selectedCardSlot = slotToSelect;
             selectedCardSlot.transform.localScale *= selectedCardSlotScaleFactor;
+        }
+    }
+
+    private void UpdateStatusDisplay() {
+        for (int i = 0; i < playerNameText.Count; i++) {
+            string prefix = "";
+            string actionsString = "";
+            if (i == currentPlayerIndex) {
+                prefix = ">";
+                actionsString = currentPlayer.GetActions().ToString();
+            }
+            playerNameText[i].text = prefix + players[i].GetName();
+            handSizeText[i].text = players[i].GetHandSize().ToString();
+            actionsText[i].text = actionsString;
+            scoreText[i].text = players[i].GetScore().ToString();
         }
     }
 }
