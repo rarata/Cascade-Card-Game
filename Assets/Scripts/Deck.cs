@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TriangleCardGame.Cards;
+using CascadeCardGame.Cards;
 
-namespace TriangleCardGame.Decks { 
+namespace CascadeCardGame.Decks { 
     public class Deck : MonoBehaviour
     {
         public List<Card> fullDeck = new List<Card>(52);

@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -402,11 +406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1727988479}
-  rightParent: {fileID: 16966310}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &14692982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -434,6 +435,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -503,11 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 246058538}
-  rightParent: {fileID: 926351886}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &16966311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -830,6 +832,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -898,11 +904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2084926245}
-  rightParent: {fileID: 1366718331}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &35687798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1094,101 +1097,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71709317}
   m_CullTransparentMesh: 1
---- !u!1001 &72049224
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 776685823}
-    m_Modifications:
-    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_Name
-      value: CardSlot_J (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_RootOrder
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.009000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
---- !u!4 &72049225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-  m_PrefabInstance: {fileID: 72049224}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &72049226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
-  m_PrefabInstance: {fileID: 72049224}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &72049227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72049226}
+  m_GameObject: {fileID: 6693041384095148204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 931890836}
-  rightParent: {fileID: 625128688}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &72049228
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72049226}
+  m_GameObject: {fileID: 6693041384095148204}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -1486,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1566,11 +1499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1714165668}
-  rightParent: {fileID: 2084926245}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &84027554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1893,6 +1823,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -1961,11 +1895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1316138859}
-  rightParent: {fileID: 1727988479}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &156170934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2009,6 +1940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Player 1
+  isBot: 0
   hand: {fileID: 1238897988}
   deck: {fileID: 454959029}
 --- !u!4 &159949233
@@ -2239,6 +2171,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2307,11 +2243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &170668472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2339,6 +2272,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -2408,11 +2345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 862140563}
-  rightParent: {fileID: 1595795238}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &176582913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2539,6 +2473,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -2607,11 +2545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1293700865}
-  rightParent: {fileID: 789050707}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &222286004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2738,6 +2673,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2818,11 +2757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1001359573}
-  rightParent: {fileID: 1551706532}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &246058539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3645,6 +3581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335306172}
+  - component: {fileID: 335306173}
   m_Layer: 6
   m_Name: PlaySurface
   m_TagString: Untagged
@@ -3670,6 +3607,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335306173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335306171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc2767360fbf584794db0b7f624fc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlotPrefab: {fileID: 8499768110893845975, guid: 7ded279e13cd19743bac5f562ee4b6a0, type: 3}
+  baseSpawnPoint: {fileID: 7690226722325404351}
+  verticalSpacing: 0.05
+  horizontalSpacing: 0.08
+  depthSpacing: 0.001
 --- !u!1001 &338403623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4128,6 +4082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Player2
+  isBot: 0
   hand: {fileID: 1809682126}
   deck: {fileID: 1813358600}
 --- !u!4 &401790708
@@ -4242,6 +4197,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -4310,11 +4269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 926351886}
-  rightParent: {fileID: 1990910788}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &448712755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5258,6 +5214,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5326,11 +5286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &581034166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5358,6 +5315,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -5427,11 +5388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 84027553}
-  rightParent: {fileID: 35687797}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &586730145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5459,6 +5417,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -5520,6 +5482,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -5589,11 +5555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 176582912}
-  rightParent: {fileID: 2097659036}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &625128689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5818,6 +5781,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -5886,11 +5853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1801556311}
-  rightParent: {fileID: 1442983718}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &655855947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6213,6 +6177,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -6281,11 +6249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 804031706}
-  rightParent: {fileID: 655855946}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &687722666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6313,6 +6278,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -6382,11 +6351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2125098763}
-  rightParent: {fileID: 156170933}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &690085792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6589,6 +6555,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -6669,11 +6639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2015304235}
-  rightParent: {fileID: 1661938839}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &712481014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6782,6 +6749,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6850,11 +6821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &721394040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7146,7 +7114,7 @@ Transform:
   - {fileID: 2097659035}
   - {fileID: 931890835}
   - {fileID: 625128687}
-  - {fileID: 72049225}
+  - {fileID: 7690226722325404351}
   m_Father: {fileID: 335306172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7167,11 +7135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 712481011}
-  rightParent: {fileID: 1802600638}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!4 &776957822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
@@ -7204,6 +7169,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -7273,11 +7242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1773760548}
-  rightParent: {fileID: 2125098763}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &789050708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7305,6 +7271,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -7374,11 +7344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 690085791}
-  rightParent: {fileID: 1801556311}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &804031707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7879,6 +7846,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -7947,11 +7918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 222286003}
-  rightParent: {fileID: 995454713}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &862140564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8372,6 +8340,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -8440,11 +8412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1551706532}
-  rightParent: {fileID: 581034165}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &926351887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8472,6 +8441,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -8541,11 +8514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2042223192}
-  rightParent: {fileID: 176582912}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &931890837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8908,6 +8878,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -8976,11 +8950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 789050707}
-  rightParent: {fileID: 690085791}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &995454714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9008,6 +8979,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -9077,11 +9052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1001359574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9698,6 +9670,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -9766,11 +9742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2089176927}
-  rightParent: {fileID: 1293700865}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1161742765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10708,6 +10681,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -10776,11 +10753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 2097715846}
-  rightParent: {fileID: 1773760548}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1293700866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10875,6 +10849,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -10943,11 +10921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1333819211}
-  rightParent: {fileID: 1895756221}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1316138860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11074,6 +11049,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -11154,11 +11133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1366718331}
-  rightParent: {fileID: 721394039}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1333819212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11201,67 +11177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588bab3f562eeb6458edfd36e85cac91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPlayers: 0
+  numPlayers: 2
   players:
   - {fileID: 159949232}
   - {fileID: 401790707}
-  rootCardSlots:
-  - {fileID: 2015304235}
-  - {fileID: 1661938839}
-  - {fileID: 1714165668}
-  - {fileID: 2084926245}
-  - {fileID: 1366718331}
-  - {fileID: 721394039}
-  - {fileID: 1001359573}
-  - {fileID: 1551706532}
-  - {fileID: 581034165}
-  - {fileID: 170668471}
-  mainCardSlots:
-  - {fileID: 712481011}
-  - {fileID: 1802600638}
-  - {fileID: 84027553}
-  - {fileID: 35687797}
-  - {fileID: 1333819211}
-  - {fileID: 1895756221}
-  - {fileID: 246058538}
-  - {fileID: 926351886}
-  - {fileID: 1990910788}
-  - {fileID: 776957819}
-  - {fileID: 1840937759}
-  - {fileID: 586730144}
-  - {fileID: 1705789270}
-  - {fileID: 1316138859}
-  - {fileID: 1727988479}
-  - {fileID: 16966310}
-  - {fileID: 448712754}
-  - {fileID: 1451973288}
-  - {fileID: 2097715846}
-  - {fileID: 1773760548}
-  - {fileID: 2125098763}
-  - {fileID: 156170933}
-  - {fileID: 14692981}
-  - {fileID: 1842443527}
-  - {fileID: 2089176927}
-  - {fileID: 1293700865}
-  - {fileID: 789050707}
-  - {fileID: 690085791}
-  - {fileID: 1801556311}
-  - {fileID: 1442983718}
-  - {fileID: 1161742764}
-  - {fileID: 222286003}
-  - {fileID: 995454713}
-  - {fileID: 804031706}
-  - {fileID: 655855946}
-  - {fileID: 1978398786}
-  - {fileID: 862140563}
-  - {fileID: 1595795238}
-  - {fileID: 687722665}
-  - {fileID: 2042223192}
-  - {fileID: 176582912}
-  - {fileID: 2097659036}
-  - {fileID: 931890836}
-  - {fileID: 625128688}
-  finalCardSlot: {fileID: 72049227}
+  playField: {fileID: 335306173}
   newGameButton: {fileID: 370083614}
   playerNameText:
   - {fileID: 1508258991}
@@ -11404,6 +11324,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -11472,11 +11396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1366718332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11995,6 +11916,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -12063,11 +11988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 14692981}
-  rightParent: {fileID: 1842443527}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1442983719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12095,6 +12017,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -12164,11 +12090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 776957819}
-  rightParent: {fileID: 1840937759}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1451973289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13768,6 +13691,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13836,11 +13763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1551706533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14065,6 +13989,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -14133,11 +14061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 995454713}
-  rightParent: {fileID: 804031706}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1595795239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14264,6 +14189,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -14324,6 +14253,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -14390,6 +14323,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -14459,11 +14396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1661938842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14491,6 +14425,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -14560,11 +14498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 35687797}
-  rightParent: {fileID: 1333819211}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1705789271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14796,11 +14731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1714165671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14909,6 +14841,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -14977,11 +14913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1895756221}
-  rightParent: {fileID: 246058538}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1727988480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15286,6 +15219,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -15354,11 +15291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 586730144}
-  rightParent: {fileID: 1705789270}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1773760549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15485,6 +15419,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -15553,11 +15491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 156170933}
-  rightParent: {fileID: 14692981}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1801556312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15593,11 +15528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1661938839}
-  rightParent: {fileID: 1714165668}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1802600641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15820,6 +15752,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -15888,11 +15824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1802600638}
-  rightParent: {fileID: 84027553}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1840937760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15920,6 +15853,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -15989,11 +15926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 16966310}
-  rightParent: {fileID: 448712754}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1842443528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16714,6 +16648,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -16782,11 +16720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 721394039}
-  rightParent: {fileID: 1001359573}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1895756222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17246,6 +17181,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -17314,11 +17253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1161742764}
-  rightParent: {fileID: 222286003}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1978398787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17445,6 +17381,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -17513,11 +17453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 581034165}
-  rightParent: {fileID: 170668471}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &1990910789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17644,6 +17581,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17712,11 +17653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2015304238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17744,6 +17682,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -17813,11 +17755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1978398786}
-  rightParent: {fileID: 862140563}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2042223193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17845,6 +17784,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -17914,11 +17857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 0}
-  rightParent: {fileID: 0}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2084926246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17946,6 +17886,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -18015,11 +17959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1451973288}
-  rightParent: {fileID: 2097715846}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2089176928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18047,6 +17988,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -18116,11 +18061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1595795238}
-  rightParent: {fileID: 687722665}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2097659037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18148,6 +18090,10 @@ PrefabInstance:
     - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
@@ -18217,11 +18163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1840937759}
-  rightParent: {fileID: 586730144}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2097715847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18446,6 +18389,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6693041384023231204, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7690226722388015351, guid: 2f21bec7f30c7d744a280a41c7e1980a, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -18514,11 +18461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb84b6bf24b22ab45bc4aab7275e2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftParent: {fileID: 1705789270}
-  rightParent: {fileID: 1316138859}
   isAvailable: 0
   isEmpty: 1
-  card: {fileID: 0}
 --- !u!65 &2125098764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18924,3 +18868,88 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.6960616, y: 0.00000017695129, z: 8.872102}
   m_Center: {x: 0, y: -0.003906251, z: -0.00024414062}
+--- !u!33 &1720985057040212105
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693041384095148204}
+  m_Mesh: {fileID: -4393675991995823134, guid: 0464afc39207ab540b94807b2273e3e5, type: 3}
+--- !u!23 &4962583754522025072
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693041384095148204}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0564b59d18c1a7a4ba76074a51ca276c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6693041384095148204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7690226722325404351}
+  - component: {fileID: 1720985057040212105}
+  - component: {fileID: 4962583754522025072}
+  - component: {fileID: 72049228}
+  - component: {fileID: 72049227}
+  m_Layer: 6
+  m_Name: CardSlot_J (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7690226722325404351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693041384095148204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.009000003, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 776685823}
+  m_RootOrder: 54
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

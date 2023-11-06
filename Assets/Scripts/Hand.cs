@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TriangleCardGame.Cards;
+using CascadeCardGame.Cards;
 
-namespace TriangleCardGame.Hands {
+namespace CascadeCardGame.Hands {
     public class Hand : MonoBehaviour
     {
         public List<Card> cards;
@@ -22,6 +22,7 @@ namespace TriangleCardGame.Hands {
         }
 
         public void ClearHand() {
+            DeselectCard();
             cards.Clear();
             DisplayHand();
         }
@@ -35,6 +36,9 @@ namespace TriangleCardGame.Hands {
 
         public void RemoveCard(Card cardToRemove) {
             if (cards.Contains(cardToRemove)) {
+                if (selectedCard == cardToRemove) {
+                    DeselectCard();
+                }
                 cards.Remove(cardToRemove);
             } else {
                 Debug.LogError("Requested to remove card from hand that is not in hand: {cardToRemove}");

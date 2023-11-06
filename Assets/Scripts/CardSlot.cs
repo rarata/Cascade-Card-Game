@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TriangleCardGame.Cards;
+using CascadeCardGame.Cards;
 
-namespace TriangleCardGame.CardSlots {
+namespace CascadeCardGame.CardSlots {
     public class CardSlot : MonoBehaviour
     {
-        public CardSlot leftParent;
-        public CardSlot rightParent;
-        public bool isAvailable;
-        private bool isRoot = false;
-        public bool isEmpty = true; // TODO: make private
-        public Card card = null; // TODO: make private
-        private Vector3 offset = new Vector3(0.0f, 0.001f, 0.0f);
+        private CardSlot leftParent;
+        private CardSlot rightParent;
+        public bool isAvailable = true;
+        private bool isRoot = true;
+        public bool isEmpty = true;
+        private Card card = null;
+        private Vector3 cardOffset = new Vector3(0.0f, 0.001f, 0.0f);
         private MeshRenderer meshRenderer;
 
-        void Start() {
-            isAvailable = false;
-            if (leftParent == null && rightParent == null) {
-                isRoot = true;
-                isAvailable = true;
-            }
+        void Awake() {
             meshRenderer = GetComponent<MeshRenderer>();
         }
         
@@ -34,6 +29,20 @@ namespace TriangleCardGame.CardSlots {
             }
             // Display the slot if available
             meshRenderer.enabled = isAvailable;
+        }
+
+        public void AddParents(CardSlot leftParentToAdd, CardSlot rightParentToAdd) {
+            leftParent = leftParentToAdd;
+            rightParent = rightParentToAdd;
+            isRoot = false;
+            isAvailable = false;
+        }
+
+        public void Clear() {
+            // Resets the slot and removes attached cards
+            isAvailable = isRoot;
+            isEmpty = true;
+            card = null;
         }
 
         public bool IsValidPlay(Card cardToCheck) {
@@ -56,25 +65,30 @@ namespace TriangleCardGame.CardSlots {
         public (bool, int, int) AddCard(Card cardToAdd) {
             // returns a boolean of success/failure, an int for number of draws to add, and an int for number of actions to add
             // also physically moves the card gameObject to the card slot
-            int newDraws = 0;
-            int newActions = 0;
             if (IsValidPlay(cardToAdd)) {
                 card = cardToAdd;
                 isEmpty = false;
                 isAvailable = false;
-                card.transform.position = transform.position + offset;
+                card.transform.position = transform.position + cardOffset;
                 card.transform.rotation = transform.rotation;
                 card.gameObject.layer = LayerMask.NameToLayer("PlaySurface");
-                newDraws += NumMatchingSuits(card);
-                newActions += NumMatchingNumbers(card);
-                if (IsThreeInARow(card)) {
-                    newDraws++;
-                    newActions++;
-                }
+                (int newDraws, int newActions) = GetPlayDrawsAndActions(cardToAdd);
                 return (true, newDraws, newActions);
             } else {
                 return (false, 0, 0);
             }
+        }
+
+        public (int, int) GetPlayDrawsAndActions (Card cardToCheck) {
+            int newDraws = 0;
+            int newActions = 0;
+            newDraws += NumMatchingSuits(card);
+            newActions += NumMatchingNumbers(card);
+            if (IsThreeInARow(card)) {
+                newDraws++;
+                newActions++;
+            }
+            return (newDraws, newActions);
         }
 
         private int NumMatchingSuits(Card cardToCheck) {
@@ -110,15 +124,6 @@ namespace TriangleCardGame.CardSlots {
                 }
             }
             return false;
-        }
-
-        public void Clear() {
-            // Resets the slot and removes attached cards
-            isAvailable = false;
-            isRoot = false;
-            isEmpty = true;
-            card = null;
-            Start();
         }
     }
 }

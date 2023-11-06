@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TriangleCardGame.Cards {
+namespace CascadeCardGame.Cards {
     public enum Suit {
         Clubs,
         Spades,

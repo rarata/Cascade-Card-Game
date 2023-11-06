@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TriangleCardGame.Decks;
-using TriangleCardGame.Hands;
-using TriangleCardGame.Cards;
+using CascadeCardGame.Decks;
+using CascadeCardGame.Hands;
+using CascadeCardGame.Cards;
 
-namespace TriangleCardGame.Players { 
+// TODO: prune unused methods
+namespace CascadeCardGame.Players { 
     public class Player : MonoBehaviour
     {
         public string playerName;
+        public bool isBot;
         public Hand hand;
         public Deck deck;
         private int score;
         private int actions;
-        private bool isBot;
         private int playerLayer;
 
         private void Start() {
@@ -22,9 +23,9 @@ namespace TriangleCardGame.Players {
             actions = 0;
         }
 
-        public void Setup(int startingHandSize, bool setAsBot = false) {
-            isBot = setAsBot;
+        public void Setup(int startingHandSize) {
             score = 0;
+            actions = 0;
             deck.MoveAllCardsToLayer(playerLayer);
             deck.ShuffleDeck();
             hand.ClearHand();
@@ -44,6 +45,14 @@ namespace TriangleCardGame.Players {
             for (int i = 0; i < numCards; i++) {
                 DrawCard();
             }
+        }
+
+        public void ExecutePlayAction(Card cardToPlace, int drawsToAdd, int actionsToAdd) {
+            RemoveCardFromHand(cardToPlace);
+            DrawCards(drawsToAdd);
+            AddAction(actionsToAdd);
+            actions--;
+            score++;
         }
 
         public void AddScore(int points = 1) {
