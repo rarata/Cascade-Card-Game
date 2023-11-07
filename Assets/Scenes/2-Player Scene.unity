@@ -1943,6 +1943,7 @@ MonoBehaviour:
   isBot: 0
   hand: {fileID: 1238897988}
   deck: {fileID: 454959029}
+  playField: {fileID: 335306173}
 --- !u!4 &159949233
 Transform:
   m_ObjectHideFlags: 0
@@ -4082,9 +4083,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Player2
-  isBot: 0
+  isBot: 1
   hand: {fileID: 1809682126}
   deck: {fileID: 1813358600}
+  playField: {fileID: 335306173}
 --- !u!4 &401790708
 Transform:
   m_ObjectHideFlags: 0

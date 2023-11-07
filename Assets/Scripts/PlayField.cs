@@ -73,6 +73,18 @@ namespace CascadeCardGame.PlayFields {
             }
         }
 
+        public List<CardSlot> GetAvailableCardSlots() {
+            List<CardSlot> availableCardSlots = new List<CardSlot>();
+            for (int i = 0; i < cardSlots.Count; i++) {
+                for (int j = 0; j < cardSlots[i].Count; j++) {
+                    if (cardSlots[i][j].isAvailable) {
+                        availableCardSlots.Add(cardSlots[i][j]);
+                    }
+                }
+            }
+            return availableCardSlots;
+        }
+
         public CardSlot GetSelectedCardSlot() {
             return selectedCardSlot;
         }

@@ -82,9 +82,9 @@ namespace CascadeCardGame.CardSlots {
         public (int, int) GetPlayDrawsAndActions (Card cardToCheck) {
             int newDraws = 0;
             int newActions = 0;
-            newDraws += NumMatchingSuits(card);
-            newActions += NumMatchingNumbers(card);
-            if (IsThreeInARow(card)) {
+            newDraws += NumMatchingSuits(cardToCheck);
+            newActions += NumMatchingNumbers(cardToCheck);
+            if (IsThreeInARow(cardToCheck)) {
                 newDraws++;
                 newActions++;
             }

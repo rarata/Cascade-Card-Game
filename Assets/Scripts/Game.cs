@@ -123,9 +123,7 @@ public class Game : MonoBehaviour
     }
 
     public void DrawCard() {
-        // Method to call when the Draw Card button is pressed
-        currentPlayer.DrawCard();
-        currentPlayer.RemoveAction(1);
+        currentPlayer.ExecuteDrawAction();
     }
 
     private void HandleClicks() {
