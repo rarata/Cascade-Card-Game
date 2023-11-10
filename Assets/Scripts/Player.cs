@@ -32,11 +32,6 @@ namespace CascadeCardGame.Players {
                 if (playerName == "") {
                     SelectRandomBotName();
                 }
-            }
-        }
-
-        public void Update() {
-            if (isBot) {
                 StartCoroutine(RunBot());
             }
         }
@@ -150,15 +145,23 @@ namespace CascadeCardGame.Players {
         }
 
         private IEnumerator RunBot() {
-            while(true) {
+            while (true) {
                 if (actions > 0) {
-                    PerformBotAction();
+                    yield return StartCoroutine(ExecuteBotTurn());
                 }
                 yield return null;
             }
         }
 
-        private void PerformBotAction() {
+        private IEnumerator ExecuteBotTurn() {
+            float pauseDuration = Random.Range(0.5f,2.0f);
+            yield return new WaitForSeconds(pauseDuration);
+            HardBotPerformAction();
+        }
+
+        private void EasyBotPerformAction() {
+            // The easy bot randomly selects a play from all viable plays, favoring better plays 
+            // based on their weight from playRatings
             List<(Card,CardSlot)> viablePlays = FindViablePlays();
             List<int> playRatings = RateViablePlays(viablePlays);
             int totalRating = playRatings.Sum() + botDrawRating;
@@ -169,15 +172,41 @@ namespace CascadeCardGame.Players {
                 if (randomValue < cumulativeValue) {
                     Card cardToPlay = viablePlays[i].Item1;
                     CardSlot cardSlot = viablePlays[i].Item2;
-                    (bool playSuccessfull, int drawsToAdd, int actionsToAdd) = cardSlot.AddCard(cardToPlay);
-                    if (playSuccessfull) {
+                    (bool isValidPlay, int drawsToAdd, int actionsToAdd) = cardSlot.AddCard(cardToPlay);
+                    Debug.Log("A.PlayField Add: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
+                    if (isValidPlay) {
+                        Debug.Log("B.Player play: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
                         ExecutePlayAction(cardToPlay, drawsToAdd, actionsToAdd);
+                        return;
+                    } else {
+                        Debug.Log("C.Play failed for some reason: "+ cardToPlay.ToString() + " - " + cardSlot.ToString());
                     }
-                    return;
                 }
             }
             // if the for loop didn't get to the totalRating, then draw a card as the action
             ExecuteDrawAction();
+        }
+
+        private void HardBotPerformAction() {
+            // The hard bot selects the highest-rated play from all viable plays
+            List<(Card,CardSlot)> viablePlays = FindViablePlays();
+            List<int> playRatings = RateViablePlays(viablePlays);
+            if (playRatings.Count > 0) {
+                int maxIndex = playRatings.IndexOf(playRatings.Max());
+                Card cardToPlay = viablePlays[maxIndex].Item1;
+                CardSlot cardSlot = viablePlays[maxIndex].Item2;
+                (bool isValidPlay, int drawsToAdd, int actionsToAdd) = cardSlot.AddCard(cardToPlay);
+                Debug.Log("A.PlayField Add: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
+                if (isValidPlay) {
+                    Debug.Log("B.Player play: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
+                    ExecutePlayAction(cardToPlay, drawsToAdd, actionsToAdd);
+                    return;
+                } else {
+                    Debug.Log("C.Play failed for some reason: "+ cardToPlay.ToString() + " - " + cardSlot.ToString());
+                }
+            } else {
+                ExecuteDrawAction();
+            }
         }
 
         private List<(Card, CardSlot)> FindViablePlays() { // TODO: implement
@@ -186,6 +215,7 @@ namespace CascadeCardGame.Players {
             for (int i = 0; i < availableCardSlots.Count; i++) {
                 for (int j = 0; j < hand.cards.Count; j++) {
                     if (availableCardSlots[i].IsValidPlay(hand.cards[j])) {
+                        Debug.Log("valid play found: " + hand.cards[j].ToString() + " - " + availableCardSlots[i].ToString());
                         viablePlays.Add((hand.cards[j],availableCardSlots[i]));
                     }
                 }

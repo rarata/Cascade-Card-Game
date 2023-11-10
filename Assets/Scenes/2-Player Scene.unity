@@ -1939,8 +1939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638051ac2f458d445a52ab07c9f032b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player 1
-  isBot: 0
+  playerName: 
+  isBot: 1
   hand: {fileID: 1238897988}
   deck: {fileID: 454959029}
   playField: {fileID: 335306173}
@@ -4082,7 +4082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638051ac2f458d445a52ab07c9f032b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Player2
+  playerName: 
   isBot: 1
   hand: {fileID: 1809682126}
   deck: {fileID: 1813358600}
