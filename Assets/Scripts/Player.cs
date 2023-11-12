@@ -36,41 +36,57 @@ namespace CascadeCardGame.Players {
             }
         }
 
-        public void Setup(int startingHandSize) {
+        public void Setup(int startingHandSize, int startingActions = 0) {
             score = 0;
-            actions = 0;
+            actions = startingActions;
             deck.MoveAllCardsToLayer(playerLayer);
             deck.ShuffleDeck();
-            hand.ClearHand();
-            DrawCards(startingHandSize);
+            DrawNewHand(startingHandSize);
         }
 
-        public void DrawHand() {
+        public void DrawNewHand(int numCards) {
             hand.ClearHand();
+            DrawCards(numCards);
         }
 
         public void DrawCard() {
-            Card drawnCard = deck.DrawCard();
-            hand.AddCard(drawnCard);
+            if (deck.IsEmpty()) {
+                Debug.Log("Deck empty - failed to draw card");
+            } else {
+                Card drawnCard = deck.DrawCard();
+                hand.AddCard(drawnCard);
+            }
         }
 
-        public void DrawCards(int numCards) {
+        public void DrawCards(int numCards = 1) {
             for (int i = 0; i < numCards; i++) {
                 DrawCard();
             }
         }
 
-        public void ExecuteDrawAction() {
-            DrawCard();
-            actions--;
+        public bool ExecuteDrawAction() {
+            if (deck.IsEmpty()) {
+                return false;
+            } else {
+                DrawCard();
+                actions--;
+                return true;
+            }
         }
 
-        public void ExecutePlayAction(Card cardToPlace, int drawsToAdd, int actionsToAdd) {
-            RemoveCardFromHand(cardToPlace);
-            DrawCards(drawsToAdd);
-            AddAction(actionsToAdd);
-            actions--;
-            score++;
+        public bool ExecutePlayAction(Card cardToPlace, CardSlot targetCardSlot) {
+            bool isValidPlay = targetCardSlot.IsValidPlay(cardToPlace);
+            bool cardInHand = hand.cards.Contains(cardToPlace);
+            if (isValidPlay && cardInHand) {
+                (int drawsToAdd, int actionsToAdd) = targetCardSlot.AddCard(cardToPlace);
+                RemoveCardFromHand(cardToPlace);
+                DrawCards(drawsToAdd);
+                actions += actionsToAdd - 1;  // -1 is to account for the play just performed
+                score++;
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public void AddScore(int points = 1) {
@@ -81,11 +97,11 @@ namespace CascadeCardGame.Players {
             return score;
         }
 
-        public void AddAction(int actionsToAdd = 1) {
+        public void AddActions(int actionsToAdd = 1) {
             actions += actionsToAdd;
         }
 
-        public void RemoveAction(int actionsToRemove = 1) {
+        public void RemoveActions(int actionsToRemove = 1) {
             actions -= actionsToRemove;
         }
 
@@ -154,7 +170,7 @@ namespace CascadeCardGame.Players {
         }
 
         private IEnumerator ExecuteBotTurn() {
-            float pauseDuration = Random.Range(0.5f,2.0f);
+            float pauseDuration = Random.Range(0.5f,1.5f);
             yield return new WaitForSeconds(pauseDuration);
             HardBotPerformAction();
         }
@@ -170,21 +186,27 @@ namespace CascadeCardGame.Players {
             for (int i = 0; i < playRatings.Count; i++) {
                 cumulativeValue += playRatings[i];
                 if (randomValue < cumulativeValue) {
-                    Card cardToPlay = viablePlays[i].Item1;
-                    CardSlot cardSlot = viablePlays[i].Item2;
-                    (bool isValidPlay, int drawsToAdd, int actionsToAdd) = cardSlot.AddCard(cardToPlay);
-                    Debug.Log("A.PlayField Add: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
-                    if (isValidPlay) {
-                        Debug.Log("B.Player play: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
-                        ExecutePlayAction(cardToPlay, drawsToAdd, actionsToAdd);
+                    Card cardToPlace = viablePlays[i].Item1;
+                    CardSlot targetCardSlot = viablePlays[i].Item2;
+                    if (ExecutePlayAction(cardToPlace, targetCardSlot)) {
                         return;
                     } else {
-                        Debug.Log("C.Play failed for some reason: "+ cardToPlay.ToString() + " - " + cardSlot.ToString());
+                        Debug.Log("Bot play failed for some reason: "+ cardToPlace.ToString() + " - " + targetCardSlot.ToString());
                     }
                 }
             }
             // if the for loop didn't get to the totalRating, then draw a card as the action
-            ExecuteDrawAction();
+            if (ExecuteDrawAction()) {
+                return;
+            } else {
+                if (viablePlays.Count == 0) {
+                    Debug.Log("Bot cannot play or draw, passing turn");
+                    return;
+                } else {
+                    // Can't draw, but can play - run the function again until it performs a play action
+                    EasyBotPerformAction();
+                }
+            }
         }
 
         private void HardBotPerformAction() {
@@ -193,19 +215,18 @@ namespace CascadeCardGame.Players {
             List<int> playRatings = RateViablePlays(viablePlays);
             if (playRatings.Count > 0) {
                 int maxIndex = playRatings.IndexOf(playRatings.Max());
-                Card cardToPlay = viablePlays[maxIndex].Item1;
-                CardSlot cardSlot = viablePlays[maxIndex].Item2;
-                (bool isValidPlay, int drawsToAdd, int actionsToAdd) = cardSlot.AddCard(cardToPlay);
-                Debug.Log("A.PlayField Add: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
-                if (isValidPlay) {
-                    Debug.Log("B.Player play: " + cardToPlay.ToString() + " - " + cardSlot.ToString());
-                    ExecutePlayAction(cardToPlay, drawsToAdd, actionsToAdd);
+                Card cardToPlace = viablePlays[maxIndex].Item1;
+                CardSlot targetCardSlot = viablePlays[maxIndex].Item2;
+                if (ExecutePlayAction(cardToPlace, targetCardSlot)) {
                     return;
                 } else {
-                    Debug.Log("C.Play failed for some reason: "+ cardToPlay.ToString() + " - " + cardSlot.ToString());
+                    Debug.Log("Bot play failed for some reason: "+ cardToPlace.ToString() + " - " + targetCardSlot.ToString());
                 }
+            } else if (ExecuteDrawAction()) {
+                return;
             } else {
-                ExecuteDrawAction();
+                Debug.Log("Bot cannot play or draw, passing turn");
+                actions = 0;
             }
         }
 
@@ -215,7 +236,6 @@ namespace CascadeCardGame.Players {
             for (int i = 0; i < availableCardSlots.Count; i++) {
                 for (int j = 0; j < hand.cards.Count; j++) {
                     if (availableCardSlots[i].IsValidPlay(hand.cards[j])) {
-                        Debug.Log("valid play found: " + hand.cards[j].ToString() + " - " + availableCardSlots[i].ToString());
                         viablePlays.Add((hand.cards[j],availableCardSlots[i]));
                     }
                 }

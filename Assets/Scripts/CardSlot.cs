@@ -62,7 +62,7 @@ namespace CascadeCardGame.CardSlots {
             return false; // check value is between left and right; invalid play
         }
 
-        public (bool, int, int) AddCard(Card cardToAdd) {
+        public (int, int) AddCard(Card cardToAdd) {
             // returns a boolean of success/failure, an int for number of draws to add, and an int for number of actions to add
             // also physically moves the card gameObject to the card slot
             if (IsValidPlay(cardToAdd)) {
@@ -73,9 +73,10 @@ namespace CascadeCardGame.CardSlots {
                 card.transform.rotation = transform.rotation;
                 card.gameObject.layer = LayerMask.NameToLayer("PlaySurface");
                 (int newDraws, int newActions) = GetPlayDrawsAndActions(cardToAdd);
-                return (true, newDraws, newActions);
+                return (newDraws, newActions);
             } else {
-                return (false, 0, 0);
+                Debug.Log("Failed to add card to slot: " + cardToAdd.ToString() + " - " + gameObject.ToString());
+                return (0, 0);
             }
         }
 

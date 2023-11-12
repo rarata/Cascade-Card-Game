@@ -1,8 +1,9 @@
 ## MVP
 # Features to add
-- Player 2 functions as bot
 - Gameplay instructions
 - Allow player to input name
+- Zoom in on play field
+- Fix aspect Ratio / UI issues
 
 # Code Improvements
 - Document code

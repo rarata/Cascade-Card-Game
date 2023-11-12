@@ -57,5 +57,9 @@ namespace CascadeCardGame.Decks {
         public Card DrawCard() {
             return drawDeck.Pop();
         }
+
+        public bool IsEmpty() {
+            return (drawDeck.Count == 0);
+        }
     }
 }

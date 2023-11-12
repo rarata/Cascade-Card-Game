@@ -27,14 +27,21 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         playField.SetUpPlayField(numPlayers);
-        SetupNewGame();
+        SetupNewGame(true);
     }
 
     // Update is called once per frame
     void Update() {
         HandleClicks();
+        // EndGame: check if game is over & display score
+        if (playField.IsFilled()) {
+            newGameButton.SetActive(true);
+            winnerText.text = "Winner: " + GetWinnerName();
+            winnerText.enabled = true;
+            currentPlayer.SetActions(0);
+        }
         // NextTurn: if current player is out of actions, move to next player
-        if (currentPlayer.HasNoActions()) {
+        else if (currentPlayer.HasNoActions()) {
             currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
             currentPlayer = players[currentPlayerIndex];
             currentPlayer.SetActions(1);
@@ -42,12 +49,6 @@ public class Game : MonoBehaviour
                 // If the player starts his or her turn with no cards, they get a free draw
                 currentPlayer.DrawCard();
             }
-        }
-        // EndGame: check if game is over & display score
-        if (playField.IsFilled()) {
-            newGameButton.SetActive(true);
-            winnerText.text = "Winner: " + GetWinnerName();
-            winnerText.enabled = true;
         }
         // Update the score game status text (score, # of cards in hands)
         UpdateStatusDisplay();
@@ -69,18 +70,25 @@ public class Game : MonoBehaviour
         return winnerName;
     }
 
-    public void SetupNewGame() {
+    public void SetupNewGame(bool firstGame = false) {
         // Clear the play field
         playField.Clear();
+
+        // Select first player
+        if (!firstGame) {
+            firstPlayerIndex = (firstPlayerIndex + 1) % players.Count;
+        }
+        currentPlayerIndex = firstPlayerIndex;
+        currentPlayer = players[currentPlayerIndex]; // TODO: update first player selection
  
         // Set up each player with a starting hand
         int numCards = 4;
         for (int i = 0; i < players.Count; i++) {
-            players[i].Setup(numCards);
+            int playerNum = (i + firstPlayerIndex) % players.Count;
+            int numActions = (playerNum == firstPlayerIndex) ? 1 : 0;
+            players[playerNum].Setup(numCards, numActions);
             numCards++;
         }
-        currentPlayer = players[firstPlayerIndex]; // TODO: update first player selection
-        currentPlayer.SetActions(1);
 
         // Play the triangle root cards onto the field
         List<CardSlot> rootCardSlots = playField.GetRootCardSlots();
@@ -112,18 +120,19 @@ public class Game : MonoBehaviour
             Debug.LogError("Requested to add card to non-existent slot: {targetSlot}");
         }
         // attempt to add card to the cardSlot.  If successful, remove it from the hand and update player attributes.
-        (bool isValidPlay, int newDraws, int newActions) = targetSlot.AddCard(cardToPlace);
-        if (isValidPlay) {
+        if (currentPlayer.ExecutePlayAction(cardToPlace, targetSlot)) {
             playField.DeselectCardSlot();
-            // TODO: consolidate these player calls
-            currentPlayer.ExecutePlayAction(cardToPlace, newDraws, newActions);
         } else {
             Debug.Log($"Invalid Play: {cardToPlace} in slot {targetSlot}");
         }
     }
 
     public void DrawCard() {
-        currentPlayer.ExecuteDrawAction();
+        if (currentPlayer.ExecuteDrawAction()) {
+            return;
+        } else {
+            Debug.Log("No cards left in deck, cannot draw card");
+        }
     }
 
     private void HandleClicks() {
