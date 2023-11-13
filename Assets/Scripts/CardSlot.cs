@@ -14,9 +14,12 @@ namespace CascadeCardGame.CardSlots {
         private Card card = null;
         private Vector3 cardOffset = new Vector3(0.0f, 0.001f, 0.0f);
         private MeshRenderer meshRenderer;
+        private Vector3 originalPosition;
+        private Vector3 emphasisOffset = new Vector3(0.0f, 0.01f, 0.0f);
 
         void Awake() {
             meshRenderer = GetComponent<MeshRenderer>();
+            originalPosition = transform.position;
         }
         
         void Update()
@@ -27,8 +30,8 @@ namespace CascadeCardGame.CardSlots {
                     isAvailable = true;
                 }
             }
-            // Display the slot if available
-            meshRenderer.enabled = isAvailable;
+            // Display the slot and emphasize it if available
+            UpdateDisplay();
         }
 
         public void AddParents(CardSlot leftParentToAdd, CardSlot rightParentToAdd) {
@@ -43,6 +46,25 @@ namespace CascadeCardGame.CardSlots {
             isAvailable = isRoot;
             isEmpty = true;
             card = null;
+        }
+
+        private void UpdateDisplay() {
+            meshRenderer.enabled = isAvailable;
+            if (isAvailable) {
+                Emphasize();
+            } else {
+                DeEmphasize();
+            }
+        }
+
+        public void Emphasize() {
+            // Shifts the slot up a bit
+            transform.position = originalPosition + emphasisOffset;
+        }
+
+        public void DeEmphasize() {
+            // Shifts the slot back to its natural position
+            transform.position = originalPosition;
         }
 
         public bool IsValidPlay(Card cardToCheck) {
@@ -69,7 +91,7 @@ namespace CascadeCardGame.CardSlots {
                 card = cardToAdd;
                 isEmpty = false;
                 isAvailable = false;
-                card.transform.position = transform.position + cardOffset;
+                card.transform.position = originalPosition + cardOffset;
                 card.transform.rotation = transform.rotation;
                 card.gameObject.layer = LayerMask.NameToLayer("PlaySurface");
                 (int newDraws, int newActions) = GetPlayDrawsAndActions(cardToAdd);
