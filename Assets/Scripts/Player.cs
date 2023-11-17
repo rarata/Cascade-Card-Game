@@ -17,6 +17,7 @@ namespace CascadeCardGame.Players {
         public Hand hand;
         public Deck deck;
         public PlayField playField;
+        public string botDifficulty = "Easy";
         private int score;
         private int actions;
         private int playerLayer;
@@ -172,7 +173,14 @@ namespace CascadeCardGame.Players {
         private IEnumerator ExecuteBotTurn() {
             float pauseDuration = Random.Range(0.5f,1.5f);
             yield return new WaitForSeconds(pauseDuration);
-            HardBotPerformAction();
+            if (botDifficulty == "Easy") {
+                EasyBotPerformAction();
+            } else if (botDifficulty == "Hard") {
+                HardBotPerformAction();
+            } else {
+                Debug.LogError($"Invalid bot difficulty setting: {botDifficulty}");
+            }
+            
         }
 
         private void EasyBotPerformAction() {

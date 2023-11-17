@@ -12,7 +12,13 @@ public class Game : MonoBehaviour
     public int numPlayers;
     public List<Player> players;
     public PlayField playField;
-    public GameObject newGameButton;
+    public GameObject setupUI;
+    public GameObject matchUI;
+    public GameObject playerUI;
+    public InputField playerNameInputField;
+    public Dropdown botDifficultyDropdown;
+    public GameObject PlayButton;
+    public GameObject nextGameButton;
     public List<Text> playerNameText;
     public List<Text> handSizeText;
     public List<Text> actionsText;
@@ -35,7 +41,7 @@ public class Game : MonoBehaviour
         HandleClicks();
         // EndGame: check if game is over & display score
         if (playField.IsFilled()) {
-            newGameButton.SetActive(true);
+            nextGameButton.SetActive(true);
             winnerText.text = "Winner: " + GetWinnerName();
             winnerText.enabled = true;
             currentPlayer.SetActions(0);
@@ -52,6 +58,15 @@ public class Game : MonoBehaviour
         }
         // Update the score game status text (score, # of cards in hands)
         UpdateStatusDisplay();
+    }
+
+    public void PlayButtonPress () {
+        players[0].playerName = playerNameInputField.text;
+        int selectedDifficulty = botDifficultyDropdown.value;
+        players[1].botDifficulty = botDifficultyDropdown.options[selectedDifficulty].text;
+        setupUI.SetActive(false);
+        matchUI.SetActive(true);
+        playerUI.SetActive(true);
     }
 
     private string GetWinnerName() {
@@ -99,7 +114,7 @@ public class Game : MonoBehaviour
         }
 
         // Hide the new game button and winner text
-        newGameButton.SetActive(false);
+        nextGameButton.SetActive(false);
         winnerText.enabled = false;
     }
 
