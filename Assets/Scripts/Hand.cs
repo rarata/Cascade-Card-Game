@@ -40,6 +40,7 @@ namespace CascadeCardGame.Hands {
                     DeselectCard();
                 }
                 cards.Remove(cardToRemove);
+                DisplayHand();
             } else {
                 Debug.LogError("Requested to remove card from hand that is not in hand: {cardToRemove}");
             }

@@ -24,8 +24,8 @@ public class Game : MonoBehaviour
     public GameObject playerUI;
     public InputField playerNameInputField;
     public Dropdown botDifficultyDropdown;
-    public GameObject PlayButton;
     public GameObject nextGameButton;
+    public GameObject rulesAndControlsDisplay;
     public List<Text> playerNameText;
     public List<Text> handSizeText;
     public List<Text> actionsText;
@@ -72,7 +72,7 @@ public class Game : MonoBehaviour
         
     }
 
-    public void PlayButtonPress () {
+    public void StartMatch () {
         SetupNewGame(true);
         players[0].playerName = playerNameInputField.text;
         int selectedDifficulty = botDifficultyDropdown.value;
@@ -81,6 +81,13 @@ public class Game : MonoBehaviour
         matchUI.SetActive(true);
         playerUI.SetActive(true);
         gameState = GameState.InGame;
+    }
+
+    public void EndMatch() {
+        setupUI.SetActive(true);
+        matchUI.SetActive(false);
+        playerUI.SetActive(false);
+        gameState = GameState.PreGame;
     }
 
     private void ShowGameResultsAndUpdateScore() {
@@ -121,6 +128,9 @@ public class Game : MonoBehaviour
             int numActions = (playerNum == firstPlayerIndex) ? 1 : 0;
             players[playerNum].SetupNewGame(numCards, numActions);
             numCards++;
+            if (firstGame) {
+                players[playerNum].ResetScore();
+            }
         }
 
         // Play the triangle root cards onto the field
@@ -167,6 +177,14 @@ public class Game : MonoBehaviour
         } else {
             Debug.Log("No cards left in deck, cannot draw card");
         }
+    }
+
+    public void ShowRulesAndControls() {
+        rulesAndControlsDisplay.SetActive(true);
+    }
+
+    public void HideRulesAndControls() {
+        rulesAndControlsDisplay.SetActive(false);
     }
 
     private void HandleClicks() {

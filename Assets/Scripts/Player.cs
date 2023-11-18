@@ -100,6 +100,10 @@ namespace CascadeCardGame.Players {
             return score;
         }
 
+        public void ResetScore() {
+            score = 0;
+        }
+
         public int GetCardsPlayed() {
             return cardsPlayed;
         }
