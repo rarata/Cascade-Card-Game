@@ -18,8 +18,9 @@ namespace CascadeCardGame.Players {
         public Deck deck;
         public PlayField playField;
         public string botDifficulty = "Easy";
-        private int score;
+        private int cardsPlayed;
         private int actions;
+        private int score;
         private int playerLayer;
         private int playRating = 7;
         private int botDrawRating = 5;
@@ -27,6 +28,7 @@ namespace CascadeCardGame.Players {
 
         private void Start() {
             playerLayer = gameObject.layer;
+            cardsPlayed = 0;
             score = 0;
             actions = 0;
             if (isBot) {
@@ -37,8 +39,8 @@ namespace CascadeCardGame.Players {
             }
         }
 
-        public void Setup(int startingHandSize, int startingActions = 0) {
-            score = 0;
+        public void SetupNewGame(int startingHandSize, int startingActions = 0) {
+            cardsPlayed = 0;
             actions = startingActions;
             deck.MoveAllCardsToLayer(playerLayer);
             deck.ShuffleDeck();
@@ -83,14 +85,14 @@ namespace CascadeCardGame.Players {
                 RemoveCardFromHand(cardToPlace);
                 DrawCards(drawsToAdd);
                 actions += actionsToAdd - 1;  // -1 is to account for the play just performed
-                score++;
+                cardsPlayed++;
                 return true;
             } else {
                 return false;
             }
         }
 
-        public void AddScore(int points = 1) {
+        public void AddScore(int points = 0) {
             score = score + points;
         }
 
@@ -98,12 +100,8 @@ namespace CascadeCardGame.Players {
             return score;
         }
 
-        public void AddActions(int actionsToAdd = 1) {
-            actions += actionsToAdd;
-        }
-
-        public void RemoveActions(int actionsToRemove = 1) {
-            actions -= actionsToRemove;
+        public int GetCardsPlayed() {
+            return cardsPlayed;
         }
 
         public void SetActions(int numActions) {

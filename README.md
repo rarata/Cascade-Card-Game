@@ -42,6 +42,6 @@ Play:
 
 Scoring:
 - A match is made of N games, where N is the number of players
-- At the end of each game, players get a score based on how many more cards they played than the player who played the fewest card, with the player that played the most getting and extra 1 point
+- At the end of each game, players get a score based on how many more cards they played than the player who played the fewest cards, with the player that played the most getting and extra 1 point
   - If two players tie for the most cards played, neither gets the extra point
 - At the end of the match, the player with the most points wins
